@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, View, Image } from 'react-native'
 import { router } from 'expo-router'
-import { Input, InputField, Text, Button, ButtonText } from '@gluestack-ui/themed'
+import { Input, InputField, Text, Button, ButtonText, Divider } from '@gluestack-ui/themed'
 import { Entypo } from '@expo/vector-icons'
 
 export default function Login() {
@@ -73,37 +73,73 @@ export default function Login() {
 
   return (
     <View style={styles.container}>
-      
-      <Text size='sm'>Tela de login</Text>
 
-      <Input variant='outline' size='md' mb={8}>
-        <InputField placeholder='Digite o seu e-mail' />
-      </Input>
 
-      <Input variant='outline' size='md' mb={8}>
-        <InputField type='password' placeholder='Digite a sua senha' />
-      </Input>
+      <View style={styles.form}>
+        <Text size='xl' style={styles.title} >Tela de login</Text>
 
-      <Button onPress={handleLogin} size='lg' variant='solid' action='primary'>
-        <ButtonText>Acessar o app <Entypo name="login" size={24} color="black" /></ButtonText>
-      </Button>
+        <Input variant='outline' size='md' mb={12} mr={8} ml={8}>
+          <InputField placeholder='Digite o seu e-mail' style={styles.text}/>
+        </Input>
+
+        <Input variant='outline' size='md' mb={12} mr={8} ml={8}>
+          <InputField type='password' placeholder='Digite a sua senha' style={styles.text}/>
+        </Input>
+
+        <Button onPress={handleLogin} size='lg' variant='solid' action='primary' bgColor='#22c36a'>
+          <ButtonText>Fazer Login  <Entypo name="login" size={24} color="white" /></ButtonText>
+        </Button>
+      </View>
+
+
+      <View style={styles.form2}>
+        <Image source={require('./../assets/todolist.jpeg')} 
+               style={{height: 500, width: 500}}></Image>
+      </View>
+
 
       <StatusBar style="auto" />
-    </View>
-
-    
+    </View> 
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#040710',
     alignItems: 'center',
     justifyContent: 'center',
+    margin: 0
+  },
+  form:{
+    flex: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 60,
+    marginLeft: 36,
+    marginRight: 36
+  },
+  form2:{
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 0,
+    marginLeft: 36,
+    marginRight: 36,
+    width: 40, 
+    height: 40
   },
   tinyLogo:{
     width: 100,
     height: 100
+  }, 
+  title:{
+    margin: 36,
+    marginBottom: 40,
+    color: 'white',
+    fontSize: 28 
+  },
+  text:{
+    color: 'white'
   }
 });

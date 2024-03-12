@@ -1,0 +1,6 @@
+orange: #f95b40
+orange mais forte: #f93327
+yellow: #ffdd4c
+blue: #315da4
+night-blue: #0a2565
+green: #22c36a

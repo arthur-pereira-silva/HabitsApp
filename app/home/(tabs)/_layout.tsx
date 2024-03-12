@@ -6,7 +6,7 @@ import { FontAwesome } from '@expo/vector-icons'
 export default function TabLayout(){
     return (
         <GluestackUIProvider config={config}>
-            <Tabs screenOptions={{tabBarActiveTintColor: 'blue'}}>
+            <Tabs screenOptions={{tabBarActiveTintColor: 'black'}}>
                 <Tabs.Screen
                 name='index'
                 options={
