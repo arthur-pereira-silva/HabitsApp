@@ -1,11 +1,8 @@
 import { Tabs } from "expo-router"
-import { GluestackUIProvider } from '@gluestack-ui/themed'
-import { config } from "@gluestack-ui/config"
 import { FontAwesome } from '@expo/vector-icons'
 
 export default function TabLayout(){
     return (
-        <GluestackUIProvider config={config}>
             <Tabs screenOptions={{tabBarActiveTintColor: 'black'}}>
                 <Tabs.Screen
                 name='index'
@@ -22,6 +19,5 @@ export default function TabLayout(){
                     tabBarIcon: ({color}) => <FontAwesome name='cog' size={28} color={color} />
                 }} />
             </Tabs>
-        </GluestackUIProvider>
     )
 }
