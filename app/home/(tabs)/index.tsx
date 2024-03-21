@@ -21,7 +21,7 @@ export default function Home(){
     }, [])
     
     return (
-        <View>
+        <>
         <Text>Login {auth.user.email} com sucesso!</Text>
         {
             list.map((post) => (
@@ -29,9 +29,7 @@ export default function Home(){
             ))
         }
         <Link href="/">Voltar ao login</Link>
-        <Button onPress={auth.handleLogout}>
-            Sair do sistema
-        </Button>
-        </View>
+        <Button onPress={auth.handleLogout}><Text>Sair do sistema</Text></Button>
+        </>
     )
 }
